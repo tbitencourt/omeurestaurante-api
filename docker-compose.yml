@@ -42,9 +42,11 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
       MYSQL_DATABASE: omeurestaurante
+      MYSQL_USER: api
+      MYSQL_PASSWORD: omr123
       MYSQL_ROOT_PASSWORD: secret
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
@@ -54,12 +56,12 @@ services:
     networks:
       - app-network
 
-  #Docker Networks
-  networks:
-    app-network:
-      driver: bridge
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
 
-  #Volumes
-  volumes:
-    dbdata:
-      driver: local
+#Volumes
+volumes:
+  dbdata:
+    driver: local
