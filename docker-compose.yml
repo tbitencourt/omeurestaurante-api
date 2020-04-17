@@ -1,4 +1,5 @@
 version: '3'
+
 services:
 
   #PHP Service
@@ -16,7 +17,7 @@ services:
     working_dir: /var/www
     volumes:
       - ./:/var/www
-      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./.dev/services/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
 
@@ -31,7 +32,7 @@ services:
       - "443:443"
     volumes:
       - ./:/var/www
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./.dev/services/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
 
@@ -52,7 +53,7 @@ services:
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ./.dev/services/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
 
