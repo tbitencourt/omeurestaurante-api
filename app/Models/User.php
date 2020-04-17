@@ -1,11 +1,29 @@
 <?php
+declare(strict_types=1);
+/**
+ * PHP version 7.4
+ *
+ * @category PHP
+ * @package  OMeuRestaurante-Api
+ * @author   O Meu Restaurante Dev Team <contato@omeurestaurante.com.br>
+ * @license  https://www.omeurestaurante.com.br  Copyright
+ * @link     https://www.omeurestaurante.com.br
+ */
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * Class User
+ *
+ * @category PHP
+ * @package  App
+ * @author   O Meu Restaurante Dev Team <contato@omeurestaurante.com.br>
+ * @license  https://www.omeurestaurante.com.br  Copyright
+ * @link     https://www.omeurestaurante.com.br
+ */
 class User extends Authenticatable
 {
     use Notifiable;
