@@ -3,9 +3,9 @@
  *
  * @category PHP
 #if (${NAMESPACE}) * @package  ${NAMESPACE}
-#else * @package  SmartHub-App
+#else * @package  OMeuRestaurante-Api
 #end
- * @author   PerfectPay Core Team <contato@perfectpay.com.br>
- * @license  https://www.perfectpay.com.br  Copyright
- * @link     https://www.perfectpay.com.br
+ * @author   O Meu Restaurante Core Team <contato@devthreads.com.br>
+ * @license  https://www.omeurestaurante.com.br  Copyright
+ * @link     https://www.omeurestaurante.com.br
  */

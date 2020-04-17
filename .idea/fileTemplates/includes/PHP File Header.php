@@ -6,8 +6,8 @@ declare(strict_types=1);
  * PHP version 7.4
  *
  * @category PHP
- * @package  SmartHub-App
- * @author   PerfectPay Core Team <contato@perfectpay.com.br>
- * @license  https://www.perfectpay.com.br  Copyright
- * @link     https://www.perfectpay.com.br
+ * @package  OMeuRestaurante-Api
+ * @author   O Meu Restaurante Core Team <contato@devthreads.com.br>
+ * @license  https://www.omeurestaurante.com.br  Copyright
+ * @link     https://www.omeurestaurante.com.br
  */
