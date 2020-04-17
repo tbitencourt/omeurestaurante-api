@@ -57,7 +57,7 @@ jobs:
         run: bash .dev/health/phpcs.sh
 
       - name: Copy .env
-        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+        run: php -r "file_exists('.env') || copy('.env.qa', '.env');"
 
       - name: Generate key
         run: php artisan key:generate
