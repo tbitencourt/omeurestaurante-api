@@ -4,7 +4,7 @@
 
 FILES=""
 
-for file in $(git diff --name-only HEAD $(git rev-parse --verify origin/dev) -- app/ databse/)
+for file in $(git diff --name-only HEAD $(git rev-parse --verify origin/dev) -- app/ database/)
 do
     if [[  -f "$file" && ${file: -4} == ".php" ]]; then
         FILES+="$file "
