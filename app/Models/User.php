@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @link     https://www.omeurestaurante.com.br
  */
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,7 +19,7 @@ use Illuminate\Notifications\Notifiable;
  * Class User
  *
  * @category PHP
- * @package  App
+ * @package  App\Models
  * @author   O Meu Restaurante Dev Team <contato@omeurestaurante.com.br>
  * @license  https://www.omeurestaurante.com.br  Copyright
  * @link     https://www.omeurestaurante.com.br

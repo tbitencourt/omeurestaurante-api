@@ -10,20 +10,27 @@ declare(strict_types=1);
  * @link     https://www.omeurestaurante.com.br
  */
 
-namespace App\Models;
+namespace App\Repositories;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use Tbitencourt\LaravelRepositoryEloquent\RepositoryEloquent;
 
 /**
- * Class Restaurant
+ * Class UserRepository
  *
  * @category PHP
- * @package  App\Models
+ * @package  App\Repositories
  * @author   O Meu Restaurante Dev Team <contato@omeurestaurante.com.br>
  * @license  https://www.omeurestaurante.com.br  Copyright
  * @link     https://www.omeurestaurante.com.br
  */
-class Restaurant extends Model
+class UserRepository extends RepositoryEloquent
 {
-
+    /**
+     * @inheritDoc
+     */
+    public function model()
+    {
+        return User::class;
+    }
 }

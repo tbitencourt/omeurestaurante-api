@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6558f74828bca9ebecac73d90cea4b1a",
+    "content-hash": "7910e63bf8ccf2733d454fa228388d6a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3253,6 +3253,60 @@
                 "dump"
             ],
             "time": "2020-03-27T16:56:45+00:00"
+        },
+        {
+            "name": "tbitencourt/laravel-repository-eloquent",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tbitencourt/laravel-repository-eloquent.git",
+                "reference": "569cc72f8f146a00a6cf543e0867ee9e0e20d70e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tbitencourt/laravel-repository-eloquent/zipball/569cc72f8f146a00a6cf543e0867ee9e0e20d70e",
+                "reference": "569cc72f8f146a00a6cf543e0867ee9e0e20d70e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.2.0||~5.3.0||~5.4.0||~5.5.0||~5.6.0||~5.7.0||~5.8.0||^6.0.0||^7.0.0",
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tbitencourt\\LaravelRepositoryEloquent\\Providers\\RepositoryEloquentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "classmap": [],
+                "psr-4": {
+                    "App\\": "app/",
+                    "Tbitencourt\\LaravelRepositoryEloquent\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thales Bitencourt",
+                    "email": "thalesbitencourt@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easy MVC repository with Eloquent for Laravel 5 or later",
+            "homepage": "https://github.com/tbitencourt/laravel-repository-eloquent",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "php",
+                "repository"
+            ],
+            "time": "2020-04-17T01:34:54+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
