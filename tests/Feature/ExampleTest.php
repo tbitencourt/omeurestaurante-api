@@ -34,7 +34,9 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('https://www.google.com.br');
+
+//        dd($response);
 
         $response->assertStatus(200);
     }
