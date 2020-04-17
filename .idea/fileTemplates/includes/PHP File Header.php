@@ -1,5 +1,5 @@
 declare(strict_types=1);
-/**
+/*
 #if (!${NAME}) * File ${FILE_NAME}
  *
 #end
