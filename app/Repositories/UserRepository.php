@@ -1,5 +1,7 @@
 <?php
+
 declare(strict_types=1);
+
 /**
  * PHP version 7.4
  *
@@ -29,7 +31,7 @@ class UserRepository extends RepositoryEloquent
     /**
      * @inheritDoc
      */
-    public function model()
+    public function model(): string
     {
         return User::class;
     }

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         name="Laravel Repository Eloquent PHPMD rule set"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
+                         http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="
+                         http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>
+        Laravel Repository Eloquent rule set that checks its code...
+    </description>
+
+    <!-- Import the entire clean code rule set, modify StaticAccess rule -->
+    <rule ref="rulesets/cleancode.xml">
+        <exclude name="StaticAccess"/>
+    </rule>
+    <rule ref="rulesets/cleancode.xml/StaticAccess">
+        <properties>
+            <property name="exceptions">
+                <value>
+                    \Illuminate\Database\Eloquent\Casts\Attribute,
+                    \Illuminate\Database\Eloquent\Relations\Relation,
+                    \Illuminate\Http\Resources\Json\JsonResource,
+                    \Illuminate\Support\Arr,
+                    \Illuminate\Support\Str,
+                    \Illuminate\Support\Carbon,
+                    \Illuminate\Support\Collection,
+                    \Illuminate\Support\Facades\DB,
+                    \Illuminate\Support\Facades\Log',
+                    \Illuminate\Support\Facades\Blade,
+                    \Illuminate\Support\Facades\Broadcast,
+                    \Illuminate\Support\Facades\Config,
+                    \Illuminate\Support\Facades\Log,
+                    \Illuminate\Support\Facades\Mail,
+                    \Illuminate\Support\Facades\Event,
+                    \Illuminate\Support\Facades\Gate,
+                    \Illuminate\Support\Facades\Hash,
+                    \Illuminate\Support\Facades\Http,
+                    \Illuminate\Support\Facades\Notification,
+                    \Illuminate\Support\Facades\RateLimiter,
+                    \Illuminate\Support\Facades\Schema,
+                    \Illuminate\Support\Facades\Storage,
+                    \Illuminate\Support\Facades\URL,
+                    \Illuminate\Support\Facades\Validator,
+                    \Illuminate\Validation\ValidationException,
+                    \File,
+                    \Faker\Factory
+                </value>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Import the entire codesize rule set -->
+    <rule ref="rulesets/codesize.xml"/>
+
+    <!-- Import the entire controversial rule set -->
+    <rule ref="rulesets/controversial.xml"/>
+
+    <!-- Import the entire design rule set -->
+    <rule ref="rulesets/design.xml"/>
+
+    <!-- Import the entire naming rule set, modify ShortVariable rule -->
+    <rule ref="rulesets/naming.xml">
+        <exclude name="LongVariable"/>
+        <exclude name="ShortVariable"/>
+        <exclude name="ShortMethodName"/>
+    </rule>
+
+    <!-- Maximum (21) to support perfect-lib -->
+    <rule ref="rulesets/naming.xml/LongVariable">
+        <properties>
+            <property name="maximum" value="21"/>
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/naming.xml/ShortVariable">
+        <properties>
+            <property name="exceptions">
+                <value>
+                    id
+                </value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="rulesets/naming.xml/ShortMethodName">
+        <properties>
+            <property name="exceptions">
+                <value>
+                    up
+                </value>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Import the entire unused code rule set -->
+    <rule ref="rulesets/unusedcode.xml"/>
+</ruleset>

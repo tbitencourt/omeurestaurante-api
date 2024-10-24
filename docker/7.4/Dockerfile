@@ -1,10 +1,19 @@
-FROM php:7.2-fpm
+FROM php:7.4-fpm
 
-# Copy composer.lock and composer.json
-COPY composer.lock composer.json /var/www/
+LABEL maintainer="Thales Bitencourt"
+LABEL php_version=7.4
+
+ARG WWWGROUP=1000
+ARG NODE_VERSION=20
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR /var/www/html
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ=UTC
+
+# Set timezone
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -18,28 +27,33 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl
+    curl \
+    libonig-dev libzip-dev \
+    wget ca-certificates
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions
 RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
-RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install gd
+
+# Install npm
+RUN curl -fsSL https://deb.nodesource.com/setup_$NODE_VERSION.x | bash -
+RUN apt-get update
+RUN apt-get install -y nodejs
+RUN npm install -g npm
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Add Xdebug to PHP configuration
+COPY php.ini /etc/php.d/99-local.ini
+
 # Add user for laravel application
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
-
-# Copy existing application directory contents
-COPY . /var/www
-
-# Copy existing application directory permissions
-COPY --chown=www:www . /var/www
 
 # Change current user to www
 USER www
