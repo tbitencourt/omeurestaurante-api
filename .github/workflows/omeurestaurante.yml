@@ -70,7 +70,9 @@ jobs:
         run: bash .dev/health/lint.sh
 
       - name: Copy/Paste Detector
-        run: bash .dev/health/phpcpd.sh
+        run: |
+          echo "step disabled: Package sebastian/phpcpd is abandoned"
+          bash .dev/health/phpcpd.sh
 
       - name: Mess Detector
         run: bash .dev/health/phpmd.sh
