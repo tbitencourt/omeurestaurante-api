@@ -29,7 +29,7 @@ class UserRepository extends RepositoryEloquent
     /**
      * @inheritDoc
      */
-    public function model()
+    public function model(): string
     {
         return User::class;
     }
